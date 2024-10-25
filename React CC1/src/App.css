@@ -1,0 +1,109 @@
+/* General Styles */
+.App {
+  font-family: 'Roboto', sans-serif;
+  background-color: #57565b; /* Dark background color */
+  color: #e0e0e0; /* Light text color */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://example.com/pharmacy-background.jpg'); /* Replace with actual pharmacy image URL */
+  background-size: cover;
+  background-position: center;
+}
+
+/* AppBar Styles */
+.MuiAppBar-root {
+  background-color: #e82e2e; /* Slightly lighter dark color */
+  color: #e0e0e0; /* Light text color */
+  box-shadow: none; /* Remove default shadow */
+}
+
+.MuiToolbar-root {
+  display: flex;
+  justify-content: space-between;
+}
+
+.MuiTypography-h6 {
+  color: #e0e0e0;
+}
+
+/* Container Styles */
+.MuiContainer-root {
+  margin-top: 20px;
+}
+
+/* Paper Component Styles */
+.MuiPaper-root {
+  padding: 20px;
+  background-color: #c11717; /* Darker background for paper components */
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+}
+
+/* Typography Styles */
+.MuiTypography-h4, .MuiTypography-h5 {
+  color: #ffffff; /* Light color for headings */
+}
+
+.MuiTypography-h6 {
+  color: #cccccc; /* Slightly lighter color for subheadings */
+}
+
+.MuiTypography-body1 {
+  color: #e0e0e0; /* Light color for body text */
+}
+
+/* TextField Styles */
+.MuiTextField-root {
+  margin-bottom: 20px;
+}
+
+/* Button Styles */
+.MuiButton-root {
+  border-radius: 20px; /* Rounded corners for buttons */
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.MuiButton-contained {
+  background-color: #ff4081; /* Vibrant button color */
+  color: #ffffff;
+}
+
+.MuiButton-contained:hover {
+  background-color: #e0356f; /* Darker shade for hover effect */
+}
+
+/* IconButton Styles */
+.MuiIconButton-root {
+  color: #ff4081; /* Matching icon color */
+}
+
+/* List Styles */
+.MuiList-root {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.MuiListItem-root {
+  border-bottom: 1px solid #333; /* Dark border color */
+}
+
+.MuiListItemText-primary {
+  color: #e0e0e0; /* Light color for list item text */
+  font-weight: 500;
+}
+
+/* Snackbar Styles */
+.MuiSnackbar-root {
+  margin-bottom: 50px;
+}
+
+/* Footer Styles */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  background-color: #c61010; /* Dark background color for footer */
+  color: #e0e0e0; /* Light text color */
+  text-align: center;
+}

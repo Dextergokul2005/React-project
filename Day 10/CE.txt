@@ -1,0 +1,162 @@
+App.js:
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Home from './components/Home';
+import Destination from './components/Destination';
+import About from './components/About';
+import Contact from './components/Contact';
+import RegistrationForm from './components/RegistrationForm';
+import SubmittedForm from './components/SubmittedForm';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/destination" element={<Destination />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/registration" element={<RegistrationForm />} />
+        <Route path="/submittedform" element={<SubmittedForm />} />
+        {/* Invalid paths */}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+
+Home.js:
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Welcome to the Travel Website</h1>
+      <p>This is the Home Page</p>
+    </div>
+  );
+};
+
+export default Home;
+
+RegistrationForm.js:
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const RegistrationForm = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    passport: '',
+    travelDate: '',
+    returnDate: '',
+    destination: '',
+    reason: '',
+  });
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name) newErrors.name = 'Name is required';
+    if (!formData.email.includes('@')) newErrors.email = 'Invalid email';
+    if (!formData.phone || formData.phone.length !== 10) newErrors.phone = 'Invalid phone number';
+    if (!formData.passport) newErrors.passport = 'Passport is required';
+    if (!formData.travelDate) newErrors.travelDate = 'Travel date is required';
+    if (!formData.returnDate) newErrors.returnDate = 'Return date is required';
+    if (!formData.destination) newErrors.destination = 'Destination is required';
+    if (!formData.reason) newErrors.reason = 'Reason for travel is required';
+    
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const validationErrors = validateForm();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+    } else {
+      // Pass form data to the submitted form component
+      navigate('/submittedform', { state: { formData } });
+    }
+  };
+
+  return (
+    <div>
+      <h2>Registration Form</h2>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Name" onChange={handleInputChange} />
+        {errors.name && <p>{errors.name}</p>}
+        
+        <input type="email" name="email" placeholder="Email" onChange={handleInputChange} />
+        {errors.email && <p>{errors.email}</p>}
+        
+        <input type="tel" name="phone" placeholder="Phone" onChange={handleInputChange} />
+        {errors.phone && <p>{errors.phone}</p>}
+        
+        <input type="text" name="passport" placeholder="Passport" onChange={handleInputChange} />
+        {errors.passport && <p>{errors.passport}</p>}
+        
+        <input type="date" name="travelDate" onChange={handleInputChange} />
+        {errors.travelDate && <p>{errors.travelDate}</p>}
+        
+        <input type="date" name="returnDate" onChange={handleInputChange} />
+        {errors.returnDate && <p>{errors.returnDate}</p>}
+        
+        <input type="text" name="destination" placeholder="Destination" onChange={handleInputChange} />
+        {errors.destination && <p>{errors.destination}</p>}
+        
+        <textarea name="reason" placeholder="Reason for Travel" onChange={handleInputChange} />
+        {errors.reason && <p>{errors.reason}</p>}
+        
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default RegistrationForm;
+
+
+SubmittedForm.js:
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+
+const SubmittedForm = () => {
+  const location = useLocation();
+  const formData = location.state?.formData;
+
+  return (
+    <div>
+      <h2>Form Submitted</h2>
+      {formData ? (
+        <div>
+          <p>Name: {formData.name}</p>
+          <p>Email: {formData.email}</p>
+          <p>Phone: {formData.phone}</p>
+          <p>Passport: {formData.passport}</p>
+          <p>Travel Date: {formData.travelDate}</p>
+          <p>Return Date: {formData.returnDate}</p>
+          <p>Destination: {formData.destination}</p>
+          <p>Reason: {formData.reason}</p>
+        </div>
+      ) : (
+        <p>No form data available</p>
+      )}
+    </div>
+  );
+};
+
+export default SubmittedForm;

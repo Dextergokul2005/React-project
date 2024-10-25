@@ -1,0 +1,93 @@
+App.js:
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+
+const App = () => {
+  return (
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
+
+
+components/NavBar.js:
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const NavBar = () => {
+  return (
+    <nav>
+      <h2>Website Navigation</h2>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
+
+export default NavBar;
+
+
+components/Home.js:
+import React from 'react';
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>Welcome to the Home Page!</p>
+    </div>
+  );
+};
+
+export default Home;
+
+
+components/About.js:
+import React from 'react';
+
+const About = () => {
+  return (
+    <div>
+      <h1>About Page</h1>
+      <p>This is the About Page.</p>
+    </div>
+  );
+};
+
+export default About;
+
+
+components/Contact.js:
+import React from 'react';
+
+const Contact = () => {
+  return (
+    <div>
+      <h1>Contact Page</h1>
+      <p>This is the Contact Page.</p>
+    </div>
+  );
+};
+
+export default Contact;

@@ -1,0 +1,38 @@
+import { render, screen, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import FormComponent from './FormComponent'; 
+
+test('displays name on the screen', () => {
+  render(<FormComponent />);
+  const nameInput = screen.getByLabelText(/name/i);
+  fireEvent.change(nameInput, { target: { value: 'John Doe' } });
+  expect(screen.getByText('John Doe')).toBeInTheDocument();
+});
+
+test('displays email on the screen', () => {
+  render(<FormComponent />);
+  const emailInput = screen.getByLabelText(/email/i);
+  fireEvent.change(emailInput, { target: { value: 'john@example.com' } });
+  expect(screen.getByText('john@example.com')).toBeInTheDocument();
+});
+
+test('displays message on the screen', () => {
+  render(<FormComponent />);
+  const messageInput = screen.getByLabelText(/message/i);
+  fireEvent.change(messageInput, { target: { value: 'Hello there!' } });
+  expect(screen.getByText('Hello there!')).toBeInTheDocument();
+});
+
+test('calls callback function with correct user information on form submit', () => {
+  const handleSubmit = jest.fn();
+  render(<FormComponent onSubmit={handleSubmit} />);
+  fireEvent.change(screen.getByLabelText(/name/i), { target: { value: 'John Doe' } });
+  fireEvent.change(screen.getByLabelText(/email/i), { target: { value: 'john@example.com' } });
+  fireEvent.change(screen.getByLabelText(/message/i), { target: { value: 'Hello there!' } });
+  fireEvent.click(screen.getByText(/submit/i));
+  expect(handleSubmit).toHaveBeenCalledWith({
+    name: 'John Doe',
+    email: 'john@example.com',
+    message: 'Hello there!',
+  });
+});

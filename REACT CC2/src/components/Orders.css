@@ -1,0 +1,86 @@
+.orders-container {
+    padding: 20px;
+  }
+  
+  .orders-section {
+    margin-top: 20px;
+  }
+  
+  .orders-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .orders-table th, .orders-table td {
+    border: 1px solid #303331;
+    padding: 8px;
+  }
+  
+  .orders-table th {
+    background-color: #099f31;
+    text-align: left;
+  }
+  
+  .orders-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .orders-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .view-btn, .process-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border: none;
+    color: white;
+  }
+  
+  .view-btn {
+    background-color: #4CAF50; /* Green */
+  }
+  
+  .process-btn {
+    background-color: #008CBA; /* Blue */
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+  
+  /* Modal backdrop */
+  .order-details-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Blur effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal content */
+  .order-details-modal {
+    background-color: white;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1001;
+  }
+  
+  /* Close button */
+  .order-details-modal button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  

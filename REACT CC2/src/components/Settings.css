@@ -1,0 +1,69 @@
+.settings-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .settings-container h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .settings-section {
+    margin-bottom: 30px;
+  }
+  
+  .settings-section h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .settings-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .settings-section input {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .settings-section input[type="checkbox"] {
+    width: auto;
+  }
+  
+  .settings-section input[type="checkbox"] + label {
+    display: inline-block;
+    margin-left: 10px;
+    color: #555;
+  }
+  
+  .save-button {
+    text-align: center;
+  }
+  
+  .save-button button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button button:hover {
+    background-color: #218838;
+  }
+  

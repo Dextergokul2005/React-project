@@ -1,0 +1,123 @@
+.sales-reports-container {
+  padding: 30px;
+  background-color: #f4f7f6;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.sales-reports-container h1 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.sales-reports-container p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #34495e;
+}
+
+.sales-report-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.sales-report-options button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sales-report-options button:hover {
+  background-color: #2980b9;
+  transform: translateY(-5px);
+}
+
+.sales-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.sales-table th, .sales-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.sales-table th {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+}
+
+.sales-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.sales-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+button {
+  background-color: #e67e22;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d35400;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.close-detail-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

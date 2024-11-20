@@ -1,0 +1,82 @@
+/* Inventory.css */
+
+.inventory-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.inventory-heading {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.inventory-list {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+button.view-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+button.view-more:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+
+  .inventory-heading {
+    font-size: 1.5rem;
+  }
+
+  button.view-more {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
